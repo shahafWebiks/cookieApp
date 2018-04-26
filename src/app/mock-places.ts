@@ -1,5 +1,4 @@
-import {Place} from './place';
-
+import { Place } from './place';
 
 export const PLACES: Place[] = [
   { id: 11, name: 'Mr. Nice' },
