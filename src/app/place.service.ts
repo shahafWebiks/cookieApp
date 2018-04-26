@@ -59,12 +59,13 @@ export class PlaceService {
   //////// Save methods //////////
 
   /** POST: add a new place to the server */
-  addPlace (place: Place): Observable<Place> {
+  addPlace (place: Place): Observable<any> {
     return this.http.post<Place>(this.placesUrl, place, httpOptions).pipe(
       tap((place: Place) => this.log(`added place w/ id=${place.id}`)),
       catchError(this.handleError<Place>('addPlace'))
     );
   }
+
 
   /** DELETE: delete the place from the server */
   deletePlace (place: Place | number): Observable<Place> {

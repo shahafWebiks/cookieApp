@@ -19,6 +19,14 @@ export class DashboardComponent implements OnInit {
 
   getPlaces(): void {
     this.placeService.getPlaces()
-      .subscribe(places => this.places = places.slice(1, 5));
+      .subscribe(places => this.places = (places.sort(function (a, b) {
+        if (a.num_cookies < b.num_cookies) {
+          return -1;
+        }
+        if (a.num_cookies > b.num_cookies) {
+          return 1;
+        }
+        return 0;
+      })).slice(0, 4));
   }
 }

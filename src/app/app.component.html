@@ -1,7 +1,17 @@
-<h1>{{ title }}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/places">Places</a>
-</nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<div class="grid-container">
+  <div class="grid-item head">
+    <h1>{{ title }}</h1>
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/places">Places</a>
+    </nav>
+  </div>
+  <div class="grid-item main">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="grid-item message">
+    <app-messages></app-messages>
+  </div>
+  <div class="grid-item map">
+  </div>
+</div>

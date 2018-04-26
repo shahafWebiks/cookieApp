@@ -1,10 +1,29 @@
 <div *ngIf="place">
-
   <h2>{{ place.name | uppercase }} Details</h2>
   <div><span>id: </span>{{place.id}}</div>
   <div>
     <label>name:
       <input [(ngModel)]="place.name" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>city:
+      <input [(ngModel)]="place.city" placeholder="city"/>
+    </label>
+  </div>
+  <div>
+    <label>country:
+      <input [(ngModel)]="place.country" placeholder="contry"/>
+    </label>
+  </div>
+  <div>
+    <label>cookies left:
+      <input [(ngModel)]="place.num_cookies" placeholder="refill cookies"/>
+    </label>
+  </div>
+  <div>
+    <label>coffee left:
+      <input [(ngModel)]="place.num_coffee" placeholder="refill coffee"/>
     </label>
   </div>
   <button (click)="goBack()">go back</button>

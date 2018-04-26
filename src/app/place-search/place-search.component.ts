@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import { of } from 'rxjs/observable/of';
 
 import {
   debounceTime, distinctUntilChanged, switchMap
@@ -17,7 +16,7 @@ import { PlaceService } from '../place.service';
   styleUrls: ['./place-search.component.css']
 })
 export class PlaceSearchComponent implements OnInit {
-  placees$: Observable<Place[]>;
+  places$: Observable<Place[]>;
   private searchTerms = new Subject<string>();
 
   constructor(private placeService: PlaceService) {}
@@ -28,7 +27,7 @@ export class PlaceSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.placees$ = this.searchTerms.pipe(
+    this.places$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
